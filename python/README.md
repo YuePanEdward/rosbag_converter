@@ -29,19 +29,13 @@ To convert a bag or a sequence of bags, type:
 rosbag_converter <desired_format> <input_directory/input_bag> <output_directory>
 ```
 
-for instance, we could convert the `campus_train0_00` sequence to `kitti` format as follows:
+for instance, we could convert the `campus_train0` sequence to `kitti` format as follows:
 
 ```shell
-rosbag_converter kitti ./rosbag/campus_train0_00.bag ./extracted_data/
+rosbag_converter kitti ~/data/vbr_slam/campus/campus_train0/campus_train0_00.bag ~/data/campus_train0_00_kitti/
 ```
 
 Note that the input can also be a folder containing multiple bags. The converter will merge them and ouput into a single folder.
-
-Besides, if the RGB images are already debayered, please set the `--no-rgb-conversion` flag, for example:
-
-```shell
-rosbag_converter --no-rgb-conversion kitti ./rosbag/campus_train0_00.bag ./extracted_data/
-```
 
 We can expect the following result:
 

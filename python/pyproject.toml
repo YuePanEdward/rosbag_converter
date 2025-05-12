@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rosbag_converter"
+version = "0.1.0"
+description = "Originally the development kit for VBR SLAM dataset, now it is a tool to convert rosbags to other formats"
+readme = "README.md"
+authors = [
+    { name = "Emanuele Giacomini", email = "giacomini@diag.uniroma1.it" },
+    { name = "Leonardo Brizi",     email = "brizi@diag.uniroma1.it" },
+    { name = "Yue Pan", email = "yue.pan@igg.uni-bonn.de" }
+]
+requires-python = ">=3.8"
+
+classfiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: Unix",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research"
+]
+
+dependencies = [
+    "natsort",
+    "numpy",
+    "rich",
+    "typer[all]>=0.10.0",
+    "rosbags",
+    "rosbags.image",
+    "open3d"
+]
+
+[project.scripts]
+rosbag_converter = "rosbag_converter.tools.run:app"
